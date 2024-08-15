@@ -47,7 +47,7 @@ public class ControllerExceptionHandlers {
     public ResponseEntity<StandardError> handleException(IOException e, HttpServletRequest request) {
         HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
         StandardError standardError = new StandardError(Instant.now(), status.value(), e.getMessage(),
-                "File error", request.getRequestURI());
+                "Internal error", request.getRequestURI());
         return ResponseEntity.status(status).body(standardError);
     }
 
@@ -56,7 +56,7 @@ public class ControllerExceptionHandlers {
     public ResponseEntity<Map<String, String>> handleDataIntegrityViolationException(DataIntegrityViolationException ex) {
         Map<String, String> response = new HashMap<>();
         String message = (rootCause != null) ? rootCause.getMessage() : "An unexpected database error occurred.";
-        response.put("error", "Database error");
+        response.put("error", "Name in database already exists");
         response.put("message", message);
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
     }
