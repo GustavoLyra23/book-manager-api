@@ -20,7 +20,7 @@ public class Book {
 
     @ManyToOne
     @JoinColumn(name = "family_id")
-    private BookFamily familyName;
+    private BookFamily family;
 
     @Lob
     private byte[] fileData;
