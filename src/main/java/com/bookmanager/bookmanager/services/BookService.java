@@ -1,7 +1,8 @@
 package com.bookmanager.bookmanager.services;
 
-import com.bookmanager.bookmanager.dto.BookRequestDto;
-import com.bookmanager.bookmanager.dto.BookResponseDto;
+import com.bookmanager.bookmanager.dto.book.BookFileResponseDto;
+import com.bookmanager.bookmanager.dto.book.BookRequestDto;
+import com.bookmanager.bookmanager.dto.book.BookResponseDto;
 import com.bookmanager.bookmanager.entities.Book;
 import com.bookmanager.bookmanager.repositories.BookFamilyRepository;
 import com.bookmanager.bookmanager.repositories.BookRepository;
@@ -9,6 +10,7 @@ import com.bookmanager.bookmanager.services.exceptions.ResourceNotFoundException
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 
@@ -21,7 +23,7 @@ public class BookService {
     @Autowired
     private BookFamilyRepository bookFamilyRepository;
 
-
+    @Transactional
     public BookResponseDto insert(BookRequestDto bookRequestDto) {
         try {
             byte[] fileContent = bookRequestDto.getFile().getBytes();
@@ -42,5 +44,10 @@ public class BookService {
         }
     }
 
-
+    @Transactional(readOnly = true)
+    public BookFileResponseDto findById(Long id) {
+        var fileBook = bookRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Resource not found"));
+        return new BookFileResponseDto(fileBook);
+    }
 }

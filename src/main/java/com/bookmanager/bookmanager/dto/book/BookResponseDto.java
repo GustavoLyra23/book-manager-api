@@ -1,4 +1,4 @@
-package com.bookmanager.bookmanager.dto;
+package com.bookmanager.bookmanager.dto.book;
 
 import com.bookmanager.bookmanager.entities.Book;
 import lombok.Getter;
