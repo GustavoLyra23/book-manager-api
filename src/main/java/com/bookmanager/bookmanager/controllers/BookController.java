@@ -5,11 +5,15 @@ import com.bookmanager.bookmanager.dto.book.BookResponseDto;
 import com.bookmanager.bookmanager.services.BookService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+
+import java.io.IOException;
 
 @RestController
 @RequestMapping(value = "/books")
@@ -21,7 +25,7 @@ public class BookController {
 
     @PostMapping
     @PreAuthorize("hasAnyRole('ROLE_CLIENT','ROLE_ADMIN')")
-    public ResponseEntity<BookResponseDto> addBook(@Valid @ModelAttribute BookRequestDto bookRequestDto) {
+    public ResponseEntity<BookResponseDto> addBook(@Valid @ModelAttribute BookRequestDto bookRequestDto) throws IOException {
         var dtoResponse = bookService.insert(bookRequestDto);
         return ResponseEntity.ok().body(dtoResponse);
     }
@@ -34,7 +38,12 @@ public class BookController {
                 .contentType(MediaType.APPLICATION_OCTET_STREAM)
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + bookFile.getTitle() + "\"")
                 .body(bookFile.getFile());
+    }
 
+    @GetMapping
+    public ResponseEntity<Page<BookResponseDto>> retrieveAllBooks(Pageable pageable) {
+        var pagedBooks = bookService.findAllPaged(pageable);
+        return ResponseEntity.ok().body(pagedBooks);
     }
 
 

@@ -11,6 +11,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import java.io.IOException;
 import java.time.Instant;
 
 @ControllerAdvice
@@ -36,5 +37,12 @@ public class ControllerExceptionHandlers {
         return ResponseEntity.status(status).body(validationError);
     }
 
+    @ExceptionHandler(IOException.class)
+    public ResponseEntity<StandardError> handleException(IOException e, HttpServletRequest request) {
+        HttpStatus status = HttpStatus.NOT_FOUND;
+        StandardError standardError = new StandardError(Instant.now(), status.value(), e.getMessage(),
+                "File error", request.getRequestURI());
+        return ResponseEntity.status(status).body(standardError);
+    }
 
 }

@@ -9,6 +9,8 @@ import com.bookmanager.bookmanager.repositories.BookRepository;
 import com.bookmanager.bookmanager.services.exceptions.ResourceNotFoundException;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,8 +25,11 @@ public class BookService {
     @Autowired
     private BookFamilyRepository bookFamilyRepository;
 
+    private static final String RESOURCE_ERROR = "Resource not found!";
+
+
     @Transactional
-    public BookResponseDto insert(BookRequestDto bookRequestDto) {
+    public BookResponseDto insert(BookRequestDto bookRequestDto) throws IOException {
         try {
             byte[] fileContent = bookRequestDto.getFile().getBytes();
             Book book = new Book();
@@ -33,21 +38,26 @@ public class BookService {
             book.setAuthor(bookRequestDto.getAuthor());
             book.setPublicationDate(bookRequestDto.getDate());
             var family = bookFamilyRepository.findById(bookRequestDto.getFamilyId())
-                    .orElseThrow(() -> new ResourceNotFoundException("Resource not found"));
+                    .orElseThrow(() -> new ResourceNotFoundException(RESOURCE_ERROR));
 
             book.setFamily(family);
             book.setTitle(bookRequestDto.getTitle());
             book = bookRepository.save(book);
             return new BookResponseDto(book);
-        } catch (IOException | EntityNotFoundException e) {
-            throw new RuntimeException();
+        } catch (EntityNotFoundException e) {
+            throw new ResourceNotFoundException(RESOURCE_ERROR);
         }
     }
 
     @Transactional(readOnly = true)
     public BookFileResponseDto findById(Long id) {
         var fileBook = bookRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Resource not found"));
+                .orElseThrow(() -> new ResourceNotFoundException(RESOURCE_ERROR));
         return new BookFileResponseDto(fileBook);
+    }
+
+    @Transactional(readOnly = true)
+    public Page<BookResponseDto> findAllPaged(Pageable pageable) {
+        return bookRepository.findAll(pageable).map(BookResponseDto::new);
     }
 }

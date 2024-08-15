@@ -21,5 +21,4 @@ public class BookResponseDto {
         author = book.getAuthor();
         publishDate = book.getPublicationDate();
     }
-
 }

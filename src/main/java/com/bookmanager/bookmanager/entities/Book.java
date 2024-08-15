@@ -22,6 +22,7 @@ public class Book {
     @JoinColumn(name = "family_id")
     private BookFamily family;
 
+
     @Lob
     private byte[] fileData;
 
