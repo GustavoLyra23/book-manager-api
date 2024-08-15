@@ -19,7 +19,7 @@ public class FtpController {
 
     @PostMapping(value = "/v1/{format}")
     @PreAuthorize("hasAnyRole('ROLE_CLIENT','ROLE_ADMIN')")
-    public ResponseEntity<Void> addBook(@RequestParam("files") List<MultipartFile> files, @PathVariable("format") String format) throws IOException {
+    public ResponseEntity<Void> sendToFtpServer(@RequestParam(value = "files") List<MultipartFile> files, @PathVariable("format") String format) throws IOException {
         ftpService.sendFileToFtpServer(files, format);
         return ResponseEntity.noContent().build();
     }

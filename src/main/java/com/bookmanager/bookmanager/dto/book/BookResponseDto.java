@@ -8,11 +8,11 @@ import java.time.LocalDate;
 @Getter
 public class BookResponseDto {
 
-    private Long id;
-    private String family;
-    private String title;
-    private String author;
-    private LocalDate publishDate;
+    private final Long id;
+    private final String family;
+    private final String title;
+    private final String author;
+    private final LocalDate publishDate;
 
     public BookResponseDto(Book book) {
         id = book.getId();

@@ -4,6 +4,7 @@ import com.bookmanager.bookmanager.dto.book.BookRequestDto;
 import com.bookmanager.bookmanager.dto.book.BookResponseDto;
 import com.bookmanager.bookmanager.services.BookService;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.Positive;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -44,6 +45,14 @@ public class BookController {
     public ResponseEntity<Page<BookResponseDto>> retrieveAllBooks(Pageable pageable) {
         var pagedBooks = bookService.findAllPaged(pageable);
         return ResponseEntity.ok().body(pagedBooks);
+    }
+
+    @PutMapping(value = "/v1/{id}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public ResponseEntity<BookResponseDto> update(@Positive(message = "id must be positive") @PathVariable("id") Long id,
+                                                  @Valid @ModelAttribute BookRequestDto bookRequestDto) throws IOException {
+        var responseDto = bookService.update(bookRequestDto, id);
+        return ResponseEntity.ok(responseDto);
     }
 
 
