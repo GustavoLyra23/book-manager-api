@@ -1,7 +1,5 @@
 # Book Manager API
 
-## 📘 Introduction
-
 Welcome to the **Book Manager API**—a state-of-the-art backend service meticulously crafted for managing library book catalogs with precision and efficiency. Built on the robust foundations of Java 21 and Spring Boot, this API offers a comprehensive suite of features tailored to meet the needs of modern software systems. Whether you're integrating it into a large-scale enterprise application or using it as a standalone service, the Book Manager API is designed to be scalable, secure, and incredibly user-friendly.
 
 ## Key Features
