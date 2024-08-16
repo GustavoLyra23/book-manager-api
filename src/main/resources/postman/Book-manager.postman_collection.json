@@ -1,0 +1,391 @@
+{
+	"info": {
+		"_postman_id": "72a98532-e8f9-43e8-bd6d-604428a66ed3",
+		"name": "Book-manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36474637"
+	},
+	"item": [
+		{
+			"name": "Auth Copy",
+			"item": [
+				{
+					"name": "LOGIN",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (responseCode.code >= 200 && responseCode.code < 300) {\r",
+									"    var json = JSON.parse(responseBody);\r",
+									"    postman.setEnvironmentVariable('token', json.access_token);\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{client-id}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{client-secret}}",
+									"type": "string"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/oauth2/token",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "INSERT BOOK FILE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "postman-cloud:///1ef5a93d-1d0d-4030-9c31-935c65a4dd5e"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/books?title=gustavo&author=gustavo&date=2024-07-10&familyId=1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"books"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "gustavo"
+								},
+								{
+									"key": "author",
+									"value": "gustavo"
+								},
+								{
+									"key": "date",
+									"value": "2024-07-10"
+								},
+								{
+									"key": "familyId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DOWNLOAD BOOK BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/books/v1/download/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"books",
+								"v1",
+								"download",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL BOOKS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/books",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE BOOK",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "postman-cloud:///1ef5a93d-1d0d-4030-9c31-935c65a4dd5e"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/books/v1/1?title=HarryPotter&author=JK RowlingRolling&date=2024-07-10&familyId=1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"books",
+								"v1",
+								"1"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "HarryPotter"
+								},
+								{
+									"key": "author",
+									"value": "JK RowlingRolling"
+								},
+								{
+									"key": "date",
+									"value": "2024-07-10"
+								},
+								{
+									"key": "familyId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FTP",
+			"item": [
+				{
+					"name": "FTP",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": "postman-cloud:///1ef5a93d-1d0d-4030-9c31-935c65a4dd5e"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/ftp/v1/excel",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"ftp",
+								"v1",
+								"excel"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BOOK FAMILY",
+			"item": [
+				{
+					"name": "GET ALL BOOK FAMILIES",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/families",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"families"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "INSERT FAMILY",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Action\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/families",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"families"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE FAMILY",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n   \"name\": \"Action\"\r\n \r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/families/v1/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"families",
+								"v1",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
