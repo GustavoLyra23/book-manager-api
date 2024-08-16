@@ -31,7 +31,7 @@ git clone https://github.com/GustavoLyra23/book-manager-api.git
 ```
 after cloning go to the project directory
 ```bash
-cd book-manager-api
+cd bookmanager
 ```
 
 ### 2. Build the Docker Image
