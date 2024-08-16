@@ -45,4 +45,4 @@ Launch the API by executing:
 docker run -p 8080:8080 book-manager-api
 ```
 
-Once the container is running, the API will be accessible at `http://localhost:8080`.
+Once the container is running, the API will be accessible at http://localhost:8080.
