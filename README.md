@@ -90,9 +90,7 @@ The API’s database schema is thoughtfully designed with clear and efficient re
 For external file management, the API seamlessly integrates with an FTP server. To view files uploaded by the API:
 
 - Download FileZilla Client: Install FileZilla or another FTP client of your choice.
-- Connect to the FTP Server with the Server data:  
- Exemple: 
-
+- Connect to the FTP Server with the Server data:
  ### FTP config
     ftp:
      host: ftp.dlptest.com
