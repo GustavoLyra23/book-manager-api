@@ -93,7 +93,7 @@ For external file management, the API seamlessly integrates with an FTP server. 
 - Connect to the FTP Server with the Server data:  
  Exemple: 
 
- # FTP config
+ ### FTP config
     ftp:
      host: ftp.dlptest.com
      port: 21
