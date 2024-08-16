@@ -1,17 +1,16 @@
 # Book Manager API
 
-Welcome to the **Book Manager API** a backend service meticulously crafted for managing library book catalogs with precision and efficiency. Built on the robust foundations of Java 21 and Spring Boot, this API offers a comprehensive suite of features tailored to meet the needs of modern software systems. Whether you're integrating it into a large-scale enterprise application or using it as a standalone service, the Book Manager API is designed to be scalable, secure, and incredibly user-friendly.
+Welcome to the **Book Manager API** a backend service meticulously crafted for managing library book catalogs with precision and efficiency. Built on the robust foundations of Java 21 and Spring Boot, this API offers a comprehensive suite of features tailored to meet the needs of modern software systems. Whether you're integrating it into a large-scale enterprise application or using it as a standalone service, the Book Manager API is designed to be scalable, secure, and user-friendly.
 
-## Key Features
+## Features
 
-- **Technology**: Built with Java 21 and the latest Spring Boot release, ensuring compatibility with modern Java features and the Spring ecosystem.
-- **Secure JWT Authentication**: Implements industry-standard JWT tokens to secure endpoints, ensuring that only authenticated and authorized users can access sensitive data.
-- **RESTful API Design**: Adheres to REST principles, providing a scalable and flexible architecture suitable for integration into any system.
-- **Interactive API Documentation**: Explore and interact with the API using [Swagger UI](http://localhost:8080/swagger-ui/index.html), a comprehensive tool for API visualization.
-- **H2 In-Memory Database**: Simplifies testing and development with a lightweight, in-memory H2 database, accessible via the [H2 Console](http://localhost:8080/h2-console).
-- **FTP Integration**: FTP Integration: Supports file export to a remote FTP server, with options to choose between Excel and TXT formats during file transfer.
-- **Detailed Postman Collection**: Includes a comprehensive set of pre-configured requests, streamlining the testing process and ensuring a smooth development experience.
-
+-  Java 21
+-  Spring Boot 3.3.2
+-  JWT Authentication
+-  RESTful API Design 
+-  Swagger -> (http://localhost:8080/swagger-ui/index.html)
+-  H2 In-Memory Database -> (http://localhost:8080/h2-console)
+-  FTP Integration
 ## Prerequisites
 
 Before you start, ensure your environment meets the following requirements:
