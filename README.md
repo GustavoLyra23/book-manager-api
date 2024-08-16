@@ -11,7 +11,7 @@ Welcome to the **Book Manager API**—a state-of-the-art backend service meticul
 - **RESTful API Design**: Adheres to REST principles, providing a scalable and flexible architecture suitable for integration into any system.
 - **Interactive API Documentation**: Explore and interact with the API using [Swagger UI](http://localhost:8080/swagger-ui/index.html), a comprehensive tool for API visualization.
 - **H2 In-Memory Database**: Simplifies testing and development with a lightweight, in-memory H2 database, accessible via the [H2 Console](http://localhost:8080/h2-console).
-- **FTP Integration**: Seamlessly exports data files to a remote FTP server, making it easier to manage external data flows.
+- **FTP Integration**: FTP Integration: Supports file export to a remote FTP server, with options to choose between Excel and TXT formats during file transfer.
 - **Detailed Postman Collection**: Includes a comprehensive set of pre-configured requests, streamlining the testing process and ensuring a smooth development experience.
 
 ## Prerequisites
