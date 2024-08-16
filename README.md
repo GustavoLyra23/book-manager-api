@@ -90,10 +90,14 @@ The API’s database schema is thoughtfully designed with clear and efficient re
 For external file management, the API seamlessly integrates with an FTP server. To view files uploaded by the API:
 
 - Download FileZilla Client: Install FileZilla or another FTP client of your choice.
-- Connect to the FTP Server:
-- Host: ftp.dlptest.com
-- Port: 21
-- Username: dlpuser
-- Password: rNrKYTX9g7z3RgJRmxWuGHbeu
+- Connect to the FTP Server with the Server data:  
+ Exemple: 
+
+ # FTP config
+    ftp:
+     host: ftp.dlptest.com
+     port: 21
+     username: dlpuser
+     password: rNrKYTX9g7z3RgJRmxWuGHbeu
 
 This integration ensures that your exported files are easily accessible and manageable through a familiar FTP interface.
