@@ -42,7 +42,8 @@ public class FtpService {
             String excel = "excel";
 
             String originalFilename = file.getOriginalFilename();
-            String localPath = ftpLocalDirectory + originalFilename + (format.equalsIgnoreCase(excel) ? ".xlsx" : ".txt");
+            String localPath = ftpLocalDirectory + originalFilename;
+//                    + (format.equalsIgnoreCase(excel) ? ".xlsx" : ".txt");
 
             if (format.equalsIgnoreCase(excel)) {
                 ExcelExporter.exportToExcel(lines, localPath);

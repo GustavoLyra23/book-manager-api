@@ -31,8 +31,7 @@ public class BookController {
         return ResponseEntity.ok().body(dtoResponse);
     }
 
-    @GetMapping(value = "/v1/{id}")
-    @PreAuthorize("hasAnyRole('ROLE_CLIENT','ROLE_ADMIN')")
+    @GetMapping(value = "/v1/download/{id}")
     public ResponseEntity<byte[]> retrieveBook(@PathVariable("id") Long id) {
         var bookFile = bookService.findById(id);
         return ResponseEntity.ok()
