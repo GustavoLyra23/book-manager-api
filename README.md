@@ -52,3 +52,16 @@ Once the container is running, the API will be accessible at http://localhost:80
 - **H2 Console:** Access the in-memory H2 database at http://localhost:8080/h2-console with the credentials:
    Username: sa
    Password: 123456
+ 
+## 📂 Postman Collection
+### Importing the Collection
+To facilitate testing, a Postman collection is included:
+
+- Locate the Collection: Navigate to the postman directory within the repository.
+- Import into Postman: Import the collection for immediate access to a comprehensive set of API requests.
+
+### Using JWT with Postman
+To test the secured endpoints:
+
+- Obtain a JWT: Use the login endpoint in Postman to generate a JWT.
+- Authorize Requests: Include the JWT in the Authorization header as a Bearer token when making API requests.
