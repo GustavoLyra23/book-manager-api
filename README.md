@@ -8,8 +8,8 @@ Welcome to the **Book Manager API** a backend service meticulously crafted for m
 -  Spring Boot 3.3.2
 -  JWT Authentication
 -  RESTful API Design 
--  Swagger -> (http://localhost:8080/swagger-ui/index.html)
--  H2 In-Memory Database -> (http://localhost:8080/h2-console)
+-  Swagger
+-  H2 In-Memory Database
 -  FTP Integration
 ## Prerequisites
 
