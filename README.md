@@ -46,3 +46,9 @@ docker run -p 8080:8080 book-manager-api
 ```
 
 Once the container is running, the API will be accessible at http://localhost:8080.
+
+## 🌐 Accessing the API
+**Swagger UI:** Interact with the API documentation at http://localhost:8080/swagger-ui/index.html.
+**H2 Console:** Access the in-memory H2 database at http://localhost:8080/h2-console with the credentials:
+ Username: sa
+ Password: 123456
