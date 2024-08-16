@@ -4,7 +4,7 @@ Welcome to the **Book Manager API** a backend service meticulously crafted for m
 
 ## Key Features
 
-- **Cutting-Edge Technology Stack**: Built with Java 21 and the latest Spring Boot release, ensuring compatibility with modern Java features and the Spring ecosystem.
+- **Technology**: Built with Java 21 and the latest Spring Boot release, ensuring compatibility with modern Java features and the Spring ecosystem.
 - **Secure JWT Authentication**: Implements industry-standard JWT tokens to secure endpoints, ensuring that only authenticated and authorized users can access sensitive data.
 - **RESTful API Design**: Adheres to REST principles, providing a scalable and flexible architecture suitable for integration into any system.
 - **Interactive API Documentation**: Explore and interact with the API using [Swagger UI](http://localhost:8080/swagger-ui/index.html), a comprehensive tool for API visualization.
