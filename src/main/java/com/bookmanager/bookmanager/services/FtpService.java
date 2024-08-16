@@ -40,10 +40,13 @@ public class FtpService {
                     .lines().toList();
 
             String excel = "excel";
-
             String originalFilename = file.getOriginalFilename();
-            String localPath = ftpLocalDirectory + originalFilename;
-//                    + (format.equalsIgnoreCase(excel) ? ".xlsx" : ".txt");
+
+            String baseFilename = originalFilename != null && originalFilename.contains(".")
+                    ? originalFilename.substring(0, originalFilename.lastIndexOf('.'))
+                    : originalFilename;
+
+            String localPath = ftpLocalDirectory + baseFilename + (format.equalsIgnoreCase(excel) ? ".xlsx" : ".txt");
 
             if (format.equalsIgnoreCase(excel)) {
                 ExcelExporter.exportToExcel(lines, localPath);
@@ -53,7 +56,7 @@ public class FtpService {
                 throw new IOException("Invalid format");
             }
 
-            String remotePath = ftpRemoteDirectory + originalFilename + (format.equalsIgnoreCase(excel) ? ".xlsx" : ".txt");
+            String remotePath = ftpRemoteDirectory + baseFilename + (format.equalsIgnoreCase(excel) ? ".xlsx" : ".txt");
             FtpUploader.uploadFile(ftpServer, ftpPort, ftpUsername, ftpPassword, localPath, remotePath);
         }
     }
