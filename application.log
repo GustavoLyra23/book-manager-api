@@ -1,0 +1,133 @@
+2024-08-17T16:25:02.680-03:00  INFO 29488 --- [bookmanager] [main] c.b.b.BookmanagerApplicationTests        : Starting BookmanagerApplicationTests using Java 22.0.2 with PID 29488 (started by gusta in C:\Users\gusta\OneDrive\Área de Trabalho\bookmanager\bookmanager)
+2024-08-17T16:25:02.765-03:00  INFO 29488 --- [bookmanager] [main] c.b.b.BookmanagerApplicationTests        : The following 1 profile is active: "test"
+2024-08-17T16:25:05.030-03:00  INFO 29488 --- [bookmanager] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-17T16:25:05.114-03:00  INFO 29488 --- [bookmanager] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 74 ms. Found 3 JPA repository interfaces.
+2024-08-17T16:25:06.236-03:00  INFO 29488 --- [bookmanager] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-17T16:25:06.586-03:00  INFO 29488 --- [bookmanager] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-08-17T16:25:06.588-03:00  INFO 29488 --- [bookmanager] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-17T16:25:06.649-03:00  INFO 29488 --- [bookmanager] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-17T16:25:06.802-03:00  INFO 29488 --- [bookmanager] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-17T16:25:06.867-03:00  INFO 29488 --- [bookmanager] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-17T16:25:07.422-03:00  INFO 29488 --- [bookmanager] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-17T16:25:08.561-03:00  INFO 29488 --- [bookmanager] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-17T16:25:08.642-03:00  INFO 29488 --- [bookmanager] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-17T16:25:09.167-03:00  INFO 29488 --- [bookmanager] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-08-17T16:25:10.366-03:00  INFO 29488 --- [bookmanager] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userService
+2024-08-17T16:25:12.700-03:00  INFO 29488 --- [bookmanager] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2024-08-17T16:25:13.572-03:00  INFO 29488 --- [bookmanager] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-08-17T16:25:13.725-03:00  INFO 29488 --- [bookmanager] [main] c.b.b.BookmanagerApplicationTests        : Started BookmanagerApplicationTests in 11.469 seconds (process running for 13.343)
+2024-08-17T16:25:14.406-03:00  INFO 29488 --- [bookmanager] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.bookmanager.bookmanager.service.BookServiceTest]: BookServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-08-17T16:25:15.020-03:00  INFO 29488 --- [bookmanager] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-17T16:25:15.039-03:00  INFO 29488 --- [bookmanager] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-17T16:25:15.046-03:00  INFO 29488 --- [bookmanager] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-17T16:35:24.082-03:00  INFO 15100 --- [bookmanager] [main] c.b.b.BookmanagerApplicationTests        : Starting BookmanagerApplicationTests using Java 22.0.2 with PID 15100 (started by gusta in C:\Users\gusta\OneDrive\Área de Trabalho\bookmanager\bookmanager)
+2024-08-17T16:35:24.163-03:00  INFO 15100 --- [bookmanager] [main] c.b.b.BookmanagerApplicationTests        : The following 1 profile is active: "test"
+2024-08-17T16:35:25.888-03:00  INFO 15100 --- [bookmanager] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-17T16:35:25.989-03:00  INFO 15100 --- [bookmanager] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 85 ms. Found 3 JPA repository interfaces.
+2024-08-17T16:35:27.236-03:00  INFO 15100 --- [bookmanager] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-17T16:35:27.718-03:00  INFO 15100 --- [bookmanager] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-08-17T16:35:27.722-03:00  INFO 15100 --- [bookmanager] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-17T16:35:27.806-03:00  INFO 15100 --- [bookmanager] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-17T16:35:27.929-03:00  INFO 15100 --- [bookmanager] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-17T16:35:27.984-03:00  INFO 15100 --- [bookmanager] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-17T16:35:28.507-03:00  INFO 15100 --- [bookmanager] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-17T16:35:29.646-03:00  INFO 15100 --- [bookmanager] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-17T16:35:29.715-03:00  INFO 15100 --- [bookmanager] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-17T16:35:30.109-03:00  INFO 15100 --- [bookmanager] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-08-17T16:35:31.204-03:00  INFO 15100 --- [bookmanager] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userService
+2024-08-17T16:35:32.882-03:00  INFO 15100 --- [bookmanager] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2024-08-17T16:35:33.767-03:00  INFO 15100 --- [bookmanager] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-08-17T16:35:33.900-03:00  INFO 15100 --- [bookmanager] [main] c.b.b.BookmanagerApplicationTests        : Started BookmanagerApplicationTests in 10.178 seconds (process running for 11.613)
+2024-08-17T16:35:34.633-03:00  INFO 15100 --- [bookmanager] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.bookmanager.bookmanager.service.BookServiceTest]: BookServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-08-17T16:35:35.174-03:00  INFO 15100 --- [bookmanager] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-17T16:35:35.186-03:00  INFO 15100 --- [bookmanager] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-17T16:35:35.192-03:00  INFO 15100 --- [bookmanager] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-17T16:42:55.082-03:00  INFO 15332 --- [bookmanager] [main] c.b.b.BookmanagerApplicationTests        : Starting BookmanagerApplicationTests using Java 22.0.2 with PID 15332 (started by gusta in C:\Users\gusta\OneDrive\Área de Trabalho\bookmanager\bookmanager)
+2024-08-17T16:42:55.173-03:00  INFO 15332 --- [bookmanager] [main] c.b.b.BookmanagerApplicationTests        : The following 1 profile is active: "test"
+2024-08-17T16:42:56.989-03:00  INFO 15332 --- [bookmanager] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-17T16:42:57.076-03:00  INFO 15332 --- [bookmanager] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 74 ms. Found 3 JPA repository interfaces.
+2024-08-17T16:42:58.226-03:00  INFO 15332 --- [bookmanager] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-17T16:42:58.625-03:00  INFO 15332 --- [bookmanager] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-08-17T16:42:58.626-03:00  INFO 15332 --- [bookmanager] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-17T16:42:58.694-03:00  INFO 15332 --- [bookmanager] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-17T16:42:58.866-03:00  INFO 15332 --- [bookmanager] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-17T16:42:58.912-03:00  INFO 15332 --- [bookmanager] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-17T16:42:59.260-03:00  INFO 15332 --- [bookmanager] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-17T16:43:00.349-03:00  INFO 15332 --- [bookmanager] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-17T16:43:00.408-03:00  INFO 15332 --- [bookmanager] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-17T16:43:00.856-03:00  INFO 15332 --- [bookmanager] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-08-17T16:43:02.976-03:00  INFO 15332 --- [bookmanager] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userService
+2024-08-17T16:43:06.243-03:00  INFO 15332 --- [bookmanager] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2024-08-17T16:43:07.570-03:00  INFO 15332 --- [bookmanager] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-08-17T16:43:07.743-03:00  INFO 15332 --- [bookmanager] [main] c.b.b.BookmanagerApplicationTests        : Started BookmanagerApplicationTests in 13.1 seconds (process running for 14.581)
+2024-08-17T16:43:08.605-03:00  INFO 15332 --- [bookmanager] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.bookmanager.bookmanager.service.BookServiceTest]: BookServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-08-17T16:43:11.680-03:00  INFO 15332 --- [bookmanager] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-17T16:43:11.732-03:00  INFO 15332 --- [bookmanager] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-17T16:43:11.752-03:00  INFO 15332 --- [bookmanager] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-17T16:47:38.187-03:00  INFO 22496 --- [bookmanager] [main] c.b.b.BookmanagerApplicationTests        : Starting BookmanagerApplicationTests using Java 22.0.2 with PID 22496 (started by gusta in C:\Users\gusta\OneDrive\Área de Trabalho\bookmanager\bookmanager)
+2024-08-17T16:47:38.276-03:00  INFO 22496 --- [bookmanager] [main] c.b.b.BookmanagerApplicationTests        : The following 1 profile is active: "test"
+2024-08-17T16:47:39.792-03:00  INFO 22496 --- [bookmanager] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-17T16:47:39.865-03:00  INFO 22496 --- [bookmanager] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 3 JPA repository interfaces.
+2024-08-17T16:47:40.889-03:00  INFO 22496 --- [bookmanager] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-17T16:47:41.126-03:00  INFO 22496 --- [bookmanager] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-08-17T16:47:41.128-03:00  INFO 22496 --- [bookmanager] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-17T16:47:41.192-03:00  INFO 22496 --- [bookmanager] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-17T16:47:41.275-03:00  INFO 22496 --- [bookmanager] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-17T16:47:41.327-03:00  INFO 22496 --- [bookmanager] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-17T16:47:41.709-03:00  INFO 22496 --- [bookmanager] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-17T16:47:42.737-03:00  INFO 22496 --- [bookmanager] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-17T16:47:42.807-03:00  INFO 22496 --- [bookmanager] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-17T16:47:43.297-03:00  INFO 22496 --- [bookmanager] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-08-17T16:47:44.386-03:00  INFO 22496 --- [bookmanager] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userService
+2024-08-17T16:47:46.009-03:00  INFO 22496 --- [bookmanager] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2024-08-17T16:47:46.899-03:00  INFO 22496 --- [bookmanager] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-08-17T16:47:47.041-03:00  INFO 22496 --- [bookmanager] [main] c.b.b.BookmanagerApplicationTests        : Started BookmanagerApplicationTests in 9.206 seconds (process running for 10.553)
+2024-08-17T16:47:47.647-03:00  INFO 22496 --- [bookmanager] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.bookmanager.bookmanager.service.BookServiceTest]: BookServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-08-17T16:47:48.223-03:00  INFO 22496 --- [bookmanager] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-17T16:47:48.237-03:00  INFO 22496 --- [bookmanager] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-17T16:47:48.245-03:00  INFO 22496 --- [bookmanager] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-17T16:52:14.959-03:00  INFO 25936 --- [bookmanager] [main] c.b.b.BookmanagerApplicationTests        : Starting BookmanagerApplicationTests using Java 22.0.2 with PID 25936 (started by gusta in C:\Users\gusta\OneDrive\Área de Trabalho\bookmanager\bookmanager)
+2024-08-17T16:52:15.033-03:00  INFO 25936 --- [bookmanager] [main] c.b.b.BookmanagerApplicationTests        : The following 1 profile is active: "test"
+2024-08-17T16:52:16.703-03:00  INFO 25936 --- [bookmanager] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-17T16:52:16.787-03:00  INFO 25936 --- [bookmanager] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75 ms. Found 3 JPA repository interfaces.
+2024-08-17T16:52:17.828-03:00  INFO 25936 --- [bookmanager] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-17T16:52:18.077-03:00  INFO 25936 --- [bookmanager] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-08-17T16:52:18.079-03:00  INFO 25936 --- [bookmanager] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-17T16:52:18.137-03:00  INFO 25936 --- [bookmanager] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-17T16:52:18.210-03:00  INFO 25936 --- [bookmanager] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-17T16:52:18.246-03:00  INFO 25936 --- [bookmanager] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-17T16:52:18.594-03:00  INFO 25936 --- [bookmanager] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-17T16:52:19.720-03:00  INFO 25936 --- [bookmanager] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-17T16:52:19.783-03:00  INFO 25936 --- [bookmanager] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-17T16:52:20.231-03:00  INFO 25936 --- [bookmanager] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-08-17T16:52:21.244-03:00  INFO 25936 --- [bookmanager] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userService
+2024-08-17T16:52:23.191-03:00  INFO 25936 --- [bookmanager] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2024-08-17T16:52:24.046-03:00  INFO 25936 --- [bookmanager] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-08-17T16:52:24.165-03:00  INFO 25936 --- [bookmanager] [main] c.b.b.BookmanagerApplicationTests        : Started BookmanagerApplicationTests in 9.711 seconds (process running for 11.306)
+2024-08-17T16:52:24.833-03:00  INFO 25936 --- [bookmanager] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.bookmanager.bookmanager.service.BookServiceTest]: BookServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-08-17T16:52:27.084-03:00  INFO 25936 --- [bookmanager] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-17T16:52:27.183-03:00  INFO 25936 --- [bookmanager] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-17T16:52:27.258-03:00  INFO 25936 --- [bookmanager] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-17 16:53:03.700 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-08-17 16:53:03.730 [main] INFO  c.b.b.BookmanagerApplicationTests - Starting BookmanagerApplicationTests using Java 22.0.2 with PID 22804 (started by gusta in C:\Users\gusta\OneDrive\Área de Trabalho\bookmanager\bookmanager)
+2024-08-17 16:53:03.731 [main] INFO  c.b.b.BookmanagerApplicationTests - The following 1 profile is active: "test"
+2024-08-17 16:53:05.425 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-17 16:53:05.526 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 87 ms. Found 3 JPA repository interfaces.
+2024-08-17 16:53:06.548 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-08-17 16:53:06.800 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-08-17 16:53:06.804 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-08-17 16:53:06.878 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-17 16:53:06.982 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-17 16:53:07.024 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-08-17 16:53:07.388 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-17 16:53:08.685 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-17 16:53:08.793 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-17 16:53:09.349 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-08-17 16:53:10.505 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userService
+2024-08-17 16:53:12.247 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 15 endpoints beneath base path '/actuator'
+2024-08-17 16:53:13.167 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-08-17 16:53:13.321 [main] INFO  c.b.b.BookmanagerApplicationTests - Started BookmanagerApplicationTests in 9.823 seconds (process running for 11.706)
+2024-08-17 16:53:13.956 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.bookmanager.bookmanager.service.BookServiceTest]: BookServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-08-17 16:53:14.565 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-17 16:53:14.579 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-08-17 16:53:14.586 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

@@ -54,6 +54,27 @@ public final class TokenUtil {
 
         return tokenParts[0] + "." + expiredPayload + "." + tokenParts[2];
     }
+
+    public String obtaiNonAdminAccessToken(MockMvc mockMvc) throws Exception {
+
+        MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
+        params.add("grant_type", "password");
+        params.add("username", "david@gmail.com");
+        params.add("password", "123456");
+
+        ResultActions result = mockMvc
+                .perform(post("/oauth2/token")
+                        .params(params)
+                        .with(httpBasic(clientId, clientSecret))
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+
+        String resultString = result.andReturn().getResponse().getContentAsString();
+        JacksonJsonParser jsonParser = new JacksonJsonParser();
+        return jsonParser.parseMap(resultString).get("access_token").toString();
+    }
+
+
 }
 
 

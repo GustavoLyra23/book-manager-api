@@ -2,13 +2,19 @@ package com.bookmanager.bookmanager.entities;
 
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
 @Data
 @Entity
 @Table(name = "tb_book")
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode
 public class Book {
 
     @Id

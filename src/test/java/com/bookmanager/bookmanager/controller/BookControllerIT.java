@@ -36,6 +36,7 @@ public class BookControllerIT {
     private BookRequestDto bookRequestDto;
     private String tokenJwt;
     private String expiredTokenJwt;
+    private String nonAdminToken;
 
     @Autowired
     private TokenUtil tokenUtil;
@@ -55,13 +56,21 @@ public class BookControllerIT {
         tokenJwt = tokenUtil.obtainAccessToken(mockMvc);
         expiredTokenJwt = tokenUtil.generateExpiredToken(mockMvc);
         nonExistingId = 100000000000000000L;
+        nonAdminToken = tokenUtil.obtaiNonAdminAccessToken(mockMvc);
     }
 
 
     @Test
     public void addBookShouldReturn200AndJsonWhenValidArgumentsAndAuthentication() throws Exception {
 
-        ResultActions resultActions = mockMvc.perform(multipart("/books").file((MockMultipartFile) bookRequestDto.getFile()).param("title", bookRequestDto.getTitle()).param("author", bookRequestDto.getAuthor()).param("date", bookRequestDto.getDate().toString()).param("familyId", bookRequestDto.getFamilyId().toString()).header("Authorization", "Bearer " + tokenJwt).contentType(MediaType.MULTIPART_FORM_DATA));
+        ResultActions resultActions = mockMvc.perform(multipart("/books")
+                .file((MockMultipartFile) bookRequestDto.getFile()).param("title", bookRequestDto.getTitle())
+                .param("author", bookRequestDto.getAuthor())
+                .param("date", bookRequestDto.getDate().toString())
+                .param("familyId", bookRequestDto.getFamilyId().toString())
+                .header("Authorization", "Bearer " + tokenJwt)
+                .contentType(MediaType.MULTIPART_FORM_DATA));
+
         resultActions.andExpect(status().isOk());
         resultActions.andExpect(jsonPath("$.id").isNotEmpty());
         resultActions.andExpect(jsonPath("$.family").value(bookFamilyRepository.findById(bookRequestDto.getFamilyId()).get().getName()));
@@ -115,7 +124,46 @@ public class BookControllerIT {
         resultActions.andExpect(jsonPath("$.content").isArray());
         resultActions.andExpect(jsonPath("$.pageable.pageNumber").value(pageable.getPageNumber()));
         resultActions.andExpect(jsonPath("$.pageable.pageSize").value(pageable.getPageSize()));
+    }
 
+    @Test
+    public void updateBookShouldReturn200andJsonWhenValidArgumentsAndAuthentication() throws Exception {
+        ResultActions resultActions = mockMvc.perform(multipart("/books/v1/{id}", 1L)
+                .file((MockMultipartFile) bookRequestDto.getFile())
+                .with(request -> {
+                    request.setMethod("PUT");
+                    return request;
+                })
+                .param("title", "Harry Potter")
+                .param("author", "Gustavo")
+                .param("date", "2024-10-07")
+                .param("familyId", "1")
+                .header("Authorization", "Bearer " + tokenJwt)
+                .contentType(MediaType.MULTIPART_FORM_DATA));
+        resultActions.andExpect(status().isOk());
+        resultActions.andExpect(jsonPath("$.id").isNotEmpty());
+        resultActions.andExpect(jsonPath("$.family").isNotEmpty());
+        resultActions.andExpect(jsonPath("$.title").value("Harry Potter"));
+        resultActions.andExpect(jsonPath("$.author").value("Gustavo"));
+        resultActions.andExpect(jsonPath("$.publishDate").value("2024-10-07"));
+        resultActions.andExpect(jsonPath("$.family").isNotEmpty());
+    }
+
+    @Test
+    public void updateShoudlReturn403WhenInvalidAuthentication() throws Exception {
+        ResultActions resultActions = mockMvc.perform(multipart("/books/v1/{id}", 1L)
+                .file((MockMultipartFile) bookRequestDto.getFile())
+                .with(request -> {
+                    request.setMethod("PUT");
+                    return request;
+                })
+                .param("title", "Harry Potter")
+                .param("author", "Gustavo")
+                .param("date", "2024-10-07")
+                .param("familyId", "1")
+                .header("Authorization", "Bearer " + nonAdminToken)
+                .contentType(MediaType.MULTIPART_FORM_DATA));
+        resultActions.andExpect(status().isForbidden());
     }
 
 
