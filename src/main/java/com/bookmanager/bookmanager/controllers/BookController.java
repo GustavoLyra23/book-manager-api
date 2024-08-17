@@ -5,8 +5,6 @@ import com.bookmanager.bookmanager.dto.book.BookResponseDto;
 import com.bookmanager.bookmanager.services.BookService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Positive;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

@@ -8,3 +8,5 @@ INSERT INTO tb_user_role (user_id,role_id) VALUES (1,1);
 INSERT INTO tb_user_role (user_id,role_id) VALUES (2,2);
 
 INSERT INTO tb_book_family (id,name) VALUES (1,'History');
+
+INSERT INTO tb_book (title,author,publication_date,family_id,file_data) values ('teste','gustavo','2021-07-10',1,'\\x696e73616e6f')

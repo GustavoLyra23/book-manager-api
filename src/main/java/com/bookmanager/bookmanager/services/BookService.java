@@ -29,6 +29,7 @@ public class BookService {
     public BookResponseDto insert(BookRequestDto bookRequestDto) throws IOException {
 
         byte[] fileContent = bookRequestDto.getFile().getBytes();
+
         Book book = new Book();
         book.setFileData(fileContent);
         book.setTitle(bookRequestDto.getTitle());
@@ -53,7 +54,7 @@ public class BookService {
 
     @Transactional(readOnly = true)
     public Page<BookResponseDto> findAllPaged(Pageable pageable) {
-        return bookRepository.findAll(pageable).map(BookResponseDto::new);
+        return bookRepository.findAllProjection(pageable).map(BookResponseDto::new);
     }
 
     @Transactional

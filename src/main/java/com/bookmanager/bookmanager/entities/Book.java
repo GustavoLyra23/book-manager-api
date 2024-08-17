@@ -19,9 +19,8 @@ public class Book {
     private LocalDate publicationDate;
 
     @ManyToOne
-    @JoinColumn(name = "family_id")
+    @JoinColumn(name = "family_id", nullable = false)
     private BookFamily family;
-
 
     @Lob
     private byte[] fileData;

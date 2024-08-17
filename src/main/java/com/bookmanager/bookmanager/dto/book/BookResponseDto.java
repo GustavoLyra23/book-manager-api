@@ -1,6 +1,7 @@
 package com.bookmanager.bookmanager.dto.book;
 
 import com.bookmanager.bookmanager.entities.Book;
+import com.bookmanager.bookmanager.projections.BookProjection;
 import lombok.Getter;
 
 import java.time.LocalDate;
@@ -20,5 +21,13 @@ public class BookResponseDto {
         title = book.getTitle();
         author = book.getAuthor();
         publishDate = book.getPublicationDate();
+    }
+
+    public BookResponseDto(BookProjection projection) {
+        id = projection.getId();
+        family = projection.getFamily().getName();
+        title = projection.getTitle();
+        author = projection.getAuthor();
+        publishDate = projection.getPublicationDate();
     }
 }
