@@ -33,9 +33,9 @@ public class ControllerExceptionHandlers {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<StandardError> handleException(MethodArgumentNotValidException e, HttpServletRequest request) {
-        HttpStatus status = HttpStatus.NOT_FOUND;
+        HttpStatus status = HttpStatus.UNPROCESSABLE_ENTITY;
         ValidationError validationError = new ValidationError(Instant.now(), status.value(), e.getMessage(),
-                "Resource not found", request.getRequestURI());
+                "UNPROCESSABLE_ENTITY", request.getRequestURI());
         e.getBindingResult().getFieldErrors().forEach(fieldError -> {
             validationError.addFieldError(new FieldError(fieldError.getField(), fieldError.getDefaultMessage()));
         });

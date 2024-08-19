@@ -69,6 +69,6 @@ public class BookService {
         book.setFileData(bookRequestDto.getFile().getBytes());
         book = bookRepository.save(book);
         return new BookResponseDto(book);
-
     }
+
 }

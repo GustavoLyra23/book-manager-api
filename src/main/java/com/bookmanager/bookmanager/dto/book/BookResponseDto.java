@@ -2,7 +2,11 @@ package com.bookmanager.bookmanager.dto.book;
 
 import com.bookmanager.bookmanager.entities.Book;
 import com.bookmanager.bookmanager.projections.BookProjection;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import lombok.Getter;
+import org.hibernate.validator.constraints.br.CPF;
 
 import java.time.LocalDate;
 

@@ -1,0 +1,5 @@
+com/bookmanager/bookmanager/util/TokenUtil.class
+com/bookmanager/bookmanager/service/BookServiceTest.class
+com/bookmanager/bookmanager/BookmanagerApplicationTests.class
+com/bookmanager/bookmanager/controller/BookControllerIT.class
+com/bookmanager/bookmanager/factory/Factory.class
