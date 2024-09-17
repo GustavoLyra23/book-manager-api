@@ -121,9 +121,9 @@ Uses Redis for caching.
 
 #### Product Management:
 - `GET /products` - List all products
-- `POST /products` - Add a new product (Admin only)
-- `PUT /products/{id}` - Update a product (Admin only)
-- `DELETE /products/{id}` - Delete a product (Admin only)
+- `POST /products` - Add a new product 
+- `PUT /products/{id}` - Update a product 
+- `DELETE /products/{id}` - Delete a product 
 
 #### File Upload:
 - `POST /upload` - Upload a file to AWS S3
