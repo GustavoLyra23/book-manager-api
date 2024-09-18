@@ -1,4 +1,5 @@
 # E-Commerce API
+
 This is an example of an E-Commerce API built with Java, Spring Boot, and Maven. It provides a comprehensive set of functionalities for user authentication, product management, file storage using AWS S3, payment processing using Stripe, logging with SLF4J, and caching with Redis. The API is designed to be a robust and scalable solution for e-commerce platforms, inspired by leading e-commerce giants like Amazon and Mercado Libre.
 
 The API supports secure user authentication and authorization, allowing users to register, log in, and manage their profiles. It also includes features for managing products, such as adding, updating, and deleting products, as well as listing all available products. File storage is handled through AWS S3, enabling efficient and secure storage of user profile pictures and product images.
@@ -6,7 +7,6 @@ The API supports secure user authentication and authorization, allowing users to
 For payment processing, the API integrates with Stripe, providing seamless payment link creation and webhook handling for real-time payment updates. Logging is implemented using SLF4J, ensuring that all application activities are properly logged for monitoring and debugging purposes. Additionally, Redis is used for caching to improve the performance and scalability of the application.
 
 This API serves as a practical example for building a modern e-commerce platform, leveraging best practices and technologies to deliver a high-quality solution.
-
 
 ## Technologies Used
 
@@ -83,11 +83,16 @@ This API serves as a practical example for building a modern e-commerce platform
 
     Copy the generated Ngrok URL and add it to your Stripe webhook dashboard.
 
+### Postman Collection
+
+A Postman collection is provided in the `src/main/resources` directory. You can import this collection into Postman to easily test the API endpoints. The collection includes pre-configured requests for user authentication, product management, file uploads, and payment processing.
+
 ## Project Structure
 
 - `src/main/java/com/gustavolyra/e_commerce_api/` - Main application code
 - `src/main/resources/` - Configuration files and SQL scripts
 - `src/main/resources/banner.txt` - Custom banner displayed on application startup
+- `src/main/resources/e_commerce_api.postman_collection.json` - Postman collection for testing API endpoints
 
 ## Key Components
 
@@ -138,4 +143,3 @@ This API uses Swagger for API documentation. Once the application is running, yo
 
 ```bash
 http://localhost:8080/swagger-ui.html
-```
