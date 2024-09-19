@@ -20,6 +20,7 @@ This API serves as a practical example for building a modern e-commerce platform
 - Docker Compose
 - SLF4J
 - Redis
+- Spring Security
 
 ## Getting Started
 
