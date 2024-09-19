@@ -1,146 +1,101 @@
-# E-Commerce API
+# Book Manager API
+Welcome to the Book Manager API a meticulously crafted backend service designed for the efficient management of library book catalogs. Built on the robust foundations of Java 21 and Spring Boot, this API leverages the latest advancements in these technologies to offer a comprehensive suite of features tailored to the needs of modern software systems. Whether you're integrating it into a large-scale enterprise application or using it as a standalone service, the Book Manager API is designed to be scalable, secure, and user-friendly.
 
-This is an example of an E-Commerce API built with Java, Spring Boot, and Maven. It provides a comprehensive set of functionalities for user authentication, product management, file storage using AWS S3, payment processing using Stripe, logging with SLF4J, and caching with Redis. The API is designed to be a robust and scalable solution for e-commerce platforms, inspired by leading e-commerce giants like Amazon and Mercado Libre.
+In addition to its core functionality, the API supports seamless FTP integration for exporting files in both Excel and TXT formats, allowing for flexible data handling and external reporting. The API’s RESTful architecture ensures that it can easily scale with your application, providing a reliable solution whether you manage a small collection or an extensive library network.
 
-The API supports secure user authentication and authorization, allowing users to register, log in, and manage their profiles. It also includes features for managing products, such as adding, updating, and deleting products, as well as listing all available products. File storage is handled through AWS S3, enabling efficient and secure storage of user profile pictures and product images.
+## Features
 
-For payment processing, the API integrates with Stripe, providing seamless payment link creation and webhook handling for real-time payment updates. Logging is implemented using SLF4J, ensuring that all application activities are properly logged for monitoring and debugging purposes. Additionally, Redis is used for caching to improve the performance and scalability of the application.
+-  Java 21
+-  Spring Boot 3.3.2
+-  JWT Authentication
+-  RESTful API Design 
+-  Swagger
+-  H2 In-Memory Database
+-  FTP Integration
+## Prerequisites
 
-This API serves as a practical example for building a modern e-commerce platform, leveraging best practices and technologies to deliver a high-quality solution.
+Before you start, ensure your environment meets the following requirements:
 
-## Technologies Used
+- **Java 21**: The latest version should be installed.
+- **Docker**: Necessary for containerization and deployment.
+- **Postman**: Recommended for API testing and interaction.
 
-- Java
-- Spring Boot
-- Maven
-- AWS S3
-- SQL
-- Stripe
-- Docker
-- Docker Compose
-- SLF4J
-- Redis
-- Spring Security
+## Quickstart Guide
 
-## Getting Started
+### 1. Clone the Repository
 
-### Prerequisites
-
-- Java 11 or higher
-- Maven
-- Docker
-- Docker Compose
-- AWS account with S3 bucket
-- Stripe account with API key
-- Redis
-- Ngrok (for local webhook testing)
-
-### Installation
-
-1. **Clone the repository:**
-
-    ```sh
-    git clone https://github.com/GustavoLyra23/e_commerce_api.git
-    cd e_commerce_api
-    ```
-
-2. **Configure the database:**
-
-    Update the `application.properties` file with your database configuration.
-
-3. **Configure AWS S3:**
-
-    Update the `application.properties` file with your AWS S3 configuration.
-
-4. **Configure Stripe:**
-
-    Update the `application.properties` file with your Stripe API key.
-
-5. **Configure Redis:**
-
-    Update the `application.properties` file with your Redis configuration.
-
-6. **Run the SQL script:**
-
-    Execute the SQL script located at `src/main/resources/import.sql` to set up the initial database schema and data.
-
-7. **Build the project:**
-
-    ```sh
-    mvn clean install
-    ```
-
-8. **Run the application using Docker Compose:**
-
-    ```sh
-    docker-compose up --build
-    ```
-
-9. **Set up Ngrok for local webhook testing:**
-
-    ```sh
-    ngrok http 8080
-    ```
-
-    Copy the generated Ngrok URL and add it to your Stripe webhook dashboard.
-
-### Postman Collection
-
-A Postman collection is provided in the `src/main/resources` directory. You can import this collection into Postman to easily test the API endpoints. The collection includes pre-configured requests for user authentication, product management, file uploads, and payment processing.
-
-## Project Structure
-
-- `src/main/java/com/gustavolyra/e_commerce_api/` - Main application code
-- `src/main/resources/` - Configuration files and SQL scripts
-- `src/main/resources/banner.txt` - Custom banner displayed on application startup
-- `src/main/resources/e_commerce_api.postman_collection.json` - Postman collection for testing API endpoints
-
-## Key Components
-
-### SecurityFilter
-
-Handles authentication by validating tokens and setting the security context.
-
-### S3Service
-
-Manages file uploads to AWS S3.
-
-### StripeService
-
-Handles payment processing and webhook events from Stripe.
-
-### Logging
-
-Uses SLF4J for logging.
-
-### Caching
-
-Uses Redis for caching.
-
-## Usage
-
-### Endpoints
-
-#### User Authentication:
-- `POST /login` - Authenticate user and return a token
-- `POST /register` - Register a new user
-
-#### Product Management:
-- `GET /products` - List all products
-- `POST /products` - Add a new product 
-- `PUT /products/{id}` - Update a product 
-- `DELETE /products/{id}` - Delete a product 
-
-#### File Upload:
-- `POST /upload` - Upload a file to AWS S3
-
-#### Payment Processing:
-- `POST /create-payment-link` - Create a payment link using Stripe
-- `POST /webhook` - Handle webhook events from Stripe
-
-### Swagger Documentation
-
-This API uses Swagger for API documentation. Once the application is running, you can access the Swagger UI at:
+To get started, clone the repository to your local machine:
 
 ```bash
-http://localhost:8080/swagger-ui.html
+git clone https://github.com/GustavoLyra23/book-manager-api.git
+```
+after cloning go to the project directory
+```bash
+cd bookmanager
+```
+
+### 2. Build the Docker Image
+Build the Docker image by running the following command:
+
+```bash
+docker build -t book-manager-api .
+```
+### 3. Run the Docker Container
+Launch the API by executing:
+
+```bash
+docker run -p 8080:8080 book-manager-api
+```
+
+Once the container is running, the API will be accessible at http://localhost:8080.
+
+## Accessing the API
+- **Swagger UI:** Interact with the API documentation at http://localhost:8080/swagger-ui/index.html.
+- **H2 Console:** Access the in-memory H2 database at http://localhost:8080/h2-console with the credentials:
+-      Username: sa
+       Password: 123456
+ 
+## Postman Collection
+### Importing the Collection
+To facilitate testing, a Postman collection is included:
+
+- Locate the Collection: Navigate to the postman directory within the repository.
+- Import into Postman: Import the collection for immediate access to a comprehensive set of API requests.
+
+### Using JWT with Postman
+To test the secured endpoints:
+
+- Obtain a JWT: Use the login endpoint in Postman to generate a JWT.
+- Authorize Requests: Include the JWT in the Authorization header as a Bearer token when making API requests.
+
+### Security and Authentication
+Security is a paramount concern in the Book Manager API. We employ JWT tokens to secure the API, ensuring that sensitive data remains protected:
+
+- Authentication: Clients authenticate by obtaining a JWT via the provided authentication endpoint.
+- Authorization: Secure requests by including the JWT in the Authorization header as a Bearer token.
+- This approach ensures that only authenticated and authorized users can perform critical operations, protecting the integrity and confidentiality of your data.
+
+### Database Schema & Entity Relationships
+The API’s database schema is thoughtfully designed with clear and efficient relationships:
+
+- Entities
+- Book: Represents a book within the system, containing essential attributes like title, author, and publication date.
+- Book Family: Represents a collection of books categorized under the same family or series.
+- Relationships
+- One-to-Many (Book Family to Books): A BookFamily can include multiple Books, reflecting real-world categorization like series or collections.
+- Many-to-One (Books to Book Family): Each Book is linked to a single BookFamily, ensuring structured and organized data storage.
+- This relational structure is crucial for maintaining data integrity and enables efficient querying and data manipulation, perfectly suited for complex library systems.
+
+### FTP Server Integration
+For external file management, the API seamlessly integrates with an FTP server. To view files uploaded by the API:
+
+- Download FileZilla Client: Install FileZilla or another FTP client of your choice.
+- Connect to the FTP Server with the Server data:
+ ### FTP config
+    ftp:
+     host: ftp.dlptest.com
+     port: 21
+     username: dlpuser
+     password: rNrKYTX9g7z3RgJRmxWuGHbeu
+
+This integration ensures that your exported files are easily accessible and manageable through a familiar FTP interface.
